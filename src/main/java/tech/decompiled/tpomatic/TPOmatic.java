@@ -1,9 +1,12 @@
 package tech.decompiled.tpomatic;
 
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.Random;
 
 public class TPOmatic extends JavaPlugin {
 
@@ -24,6 +27,8 @@ public class TPOmatic extends JavaPlugin {
         if(sender instanceof Player){
             Player p = (Player) sender;
             p.setCustomName("LIL BITCH");
+            Random rand = new Random();
+            p.teleport(new Location(p.getWorld(), rand.nextDouble(), rand.nextDouble(), rand.nextDouble()));
         }
         return true;
     }
