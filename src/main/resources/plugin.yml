@@ -1,4 +1,4 @@
 name: tech.decompiled.tpomatic.TPOmatic
 version: '0.1'
-main: tech.decompiled.tech.decompiled.tpomatic.TPOmatic
+main: tech.decompiled.tpomatic.TPOmatic
 api-version: '1.14'
