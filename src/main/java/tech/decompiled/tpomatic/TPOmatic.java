@@ -2,6 +2,7 @@ package tech.decompiled.tpomatic;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class TPOmatic extends JavaPlugin {
@@ -20,6 +21,10 @@ public class TPOmatic extends JavaPlugin {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] arguments){
         getLogger().info(cmd.getLabel() + " received from " + sender.getName());
+        if(sender instanceof Player){
+            Player p = (Player) sender;
+            p.setCustomName("LIL BITCH");
+        }
         return true;
     }
 
