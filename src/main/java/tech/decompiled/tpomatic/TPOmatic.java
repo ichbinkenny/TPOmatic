@@ -26,11 +26,29 @@ public class TPOmatic extends JavaPlugin {
         getLogger().info(cmd.getLabel() + " received from " + sender.getName());
         if(sender instanceof Player){
             Player p = (Player) sender;
-            p.setCustomName("LIL BITCH");
-            Random rand = new Random();
-            p.teleport(new Location(p.getWorld(), rand.nextDouble(), rand.nextDouble(), rand.nextDouble()));
+            p.teleport(new Location(p.getWorld(), getRandDouble(), getRandDouble(7, 64), getRandDouble()));
         }
         return true;
+    }
+
+    private double getRandDouble(){
+        Random rand = new Random();
+        return rand.nextDouble();
+    }
+
+    private double getRandDouble(double min, double max){
+        Random rand = new Random();
+        double val = rand.nextDouble();
+        if (val < min){
+            val = Math.abs(val);
+            if(val > max){
+                val = max;
+            }
+        }
+        if (val > max){
+            val = min + max % (max - min);
+        }
+        return val;
     }
 
 }
