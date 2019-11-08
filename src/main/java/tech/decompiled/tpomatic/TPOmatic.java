@@ -26,7 +26,7 @@ public class TPOmatic extends JavaPlugin {
         getLogger().info(cmd.getLabel() + " received from " + sender.getName());
         if(sender instanceof Player){
             Player p = (Player) sender;
-            p.teleport(new Location(p.getWorld(), getRandDouble(), getRandDouble(7, 64), getRandDouble()));
+            p.teleport(new Location(p.getWorld(), getRandDouble(), 64, getRandDouble()));
         }
         return true;
     }
