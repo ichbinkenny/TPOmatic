@@ -9,6 +9,7 @@ public class TPOmatic extends JavaPlugin {
     @Override
     public void onEnable(){
         getLogger().info("tech.decompiled.tpomatic.TPOmatic enabled");
+        this.getCommand("tpify").setExecutor(this);
     }
 
     @Override
